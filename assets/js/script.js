@@ -5,23 +5,39 @@
 // Daniela Onici Student ID# 8754297, 2022.06.07: Created
 //                                    2022.06.08: Finished
 
-function addingRedVelvet() {
-  var quantity = parseInt(prompt("Add the quantity"));
-  const cartValue = [];
-  const cartCake = [];
-  const cartQuantt = [];
+cartQuantity = [];
+cartType = [];
+cartPrice = [];
 
-  if (validation(quantity)){
-    var qttRedVelvet = 35 * quantity;
-    cartValue.includes(qttRedVelvet);
-    cartCake.includes(document.getElementById(redVelvetCake));
-    cartQuantt.includes(quantity);
-    console.log(cartValue[0], cartCake[0], cartQuantt[0])
+function addToCart(cakeType) {
+  cartType.push(cakeType);
+
+  var qtyInput = parseInt(prompt("Add the quantity"));
+  cartQuantity.push(qtyInput);
+
+  var finalPrice;
+
+  switch (cakeType) {
+    case "RedVelvet":
+      finalPrice = qtyInput * 35;
+      break;
+    case "Rainbow":
+      finalPrice = qtyInput * 40;
+      break;
+    case "Strawberry":
+      finalPrice = qtyInput * 30;
+      break;
+    case "Blueberry":
+      finalPrice = qtyInput * 45;
+      break;
+    case "Lemon":
+      finalPrice = qtyInput * 35;
+      break;
   }
-
+  cartPrice.push(finalPrice);
 }
 
-function validation(quantity){
+function validate(quantity) {
   if (isNaN(quantity)) {
     alert("Not a valid number. Please insert only numbers");
     return false;
@@ -40,6 +56,4 @@ function receipt(cart) {
   } else if (name == null) {
     alert("Empty. Please insert your name.");
   }
-
-  
 }
