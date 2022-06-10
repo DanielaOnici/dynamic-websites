@@ -6,7 +6,7 @@
     Dynamic website that generates a receipt after choosing the items the user wants to buy.
 
     Daniela Onici Student ID# 8754297, 2022.06.07: Created 
-                                       2022.06.08: Finished
+                                       2022.06.10: Finished
 -->
 <html>
     <head>
@@ -77,9 +77,13 @@
         </style>
     </head>
     <body>
+        <!--Creating the title of the website-->
         <h1>Cake shop</h1>
+        <!--Creating a div "boxes" to include two more boxes to be side by side-->
         <div id="boxes">
+            <!--Creating the first bos with the products to be chosen by the user-->
             <div id="items">
+                <!--Incluiding the products with label and button "Add to Cart" with the function "AddToCart()" in JS-->
                 <p>Choose your items</p><br>
                 <label for="redVelvet" id="redVelvetCake">Red Velvet Cake - $35</label> 
                     <input type="button" value="Add to Cart" onclick="addToCart('RedVelvet')"><br><br>
@@ -93,12 +97,17 @@
                     <input type="button" value="Add to Cart" onclick="addToCart('Lemon')"><br><br><br>
                     <input type="button" value="Checkout" onclick="receipt()">
             </div>
+            <!--Creating the second box "receipt" to show all the information input by the user-->
             <div id="receipt">
                 <p>Receipt</p>
+                <!--Creating a tag to include the Customer Name by JS-->
                 <p id="customerName"></p>
+                <!--Creating a tag to include the table by JS-->
                 <table id="table">
                 </table>
+                <!--Creating a tag to include the Tax Information by JS-->
                 <p id="tax"></p>
+                <!--Creating a tag to include the Final Price by JS-->
                 <p id="finalPrice"></p>
             </div>
         </div>
