@@ -51,12 +51,13 @@
                 border: solid 2px;
                 border-radius: 20px;
                 opacity: 90%;
-                padding: 10px;
+                margin: 10px;
             }
             p{
                 text-align: center;
                 font-size: 20px;
                 font-weight: bold;
+                margin: 10px;
             }
             input[type=button]{
                 color: #F2EAD0;
@@ -70,7 +71,8 @@
                 opacity: 30%;
             }
             #table{
-                border-collapse: collapse;
+                margin-right: auto;
+                margin-left: auto;
             }
         </style>
     </head>
@@ -78,7 +80,7 @@
         <h1>Cake shop</h1>
         <div id="boxes">
             <div id="items">
-                <p>Choose your items</p>
+                <p>Choose your items</p><br>
                 <label for="redVelvet" id="redVelvetCake">Red Velvet Cake - $35</label> 
                     <input type="button" value="Add to Cart" onclick="addToCart('RedVelvet')"><br><br>
                 <label for="rainbowCake">Rainbow Cake - $40</label> 
@@ -92,22 +94,12 @@
                     <input type="button" value="Checkout" onclick="receipt()">
             </div>
             <div id="receipt">
-                <p>Receipt</p><br><br>
+                <p>Receipt</p>
                 <p id="customerName"></p>
                 <table id="table">
-                    <!-- <tr>
-                        <td>Row1 cell1</td>
-                        <td>Row1 cell2</td>
-                      </tr>
-                      <tr>
-                        <td>Row2 cell1</td>
-                        <td>Row2 cell2</td>
-                      </tr>
-                      <tr>
-                        <td>Row3 cell1</td>
-                        <td>Row3 cell2</td>
-                      </tr> -->
                 </table>
+                <p id="tax"></p>
+                <p id="finalPrice"></p>
             </div>
         </div>
     </body>

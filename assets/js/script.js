@@ -61,11 +61,16 @@ function validateNumber(quantity) {
 }
 
 function receipt(cart) {
-  // var name = prompt("Please, insert your name:");
+   var name = prompt("Please, insert your name:");
 
-  // if (!validateName(name)) {
-  //   return;
-  // }
+   if (!validateName(name)) {
+     return;
+  }
+
+  var txtName = document.getElementById("customerName");
+  var txt = document.createTextNode("Customer Name: " + name);
+
+  txtName.appendChild(txt);
 
   //Creating the table
   var tableEl = document.getElementById("table");
@@ -96,8 +101,15 @@ function receipt(cart) {
 
   var priceSum = total(cartPrice);
   var tax = priceSum * 0.13;
-  var finalPrice = priceSum + tax;
-  
+  var finalPrice = Math.round(priceSum + tax);
+
+  var txtTax = document.getElementById("tax");
+  var txtFinalPrice = document.getElementById("finalPrice");
+  var text1 = document.createTextNode("GST @13%: $" + tax);
+  var text2 = document.createTextNode("Final Price: $" + finalPrice);
+
+  txtTax.appendChild(text1);
+  txtFinalPrice.appendChild(text2);
 }
 
 function validateName(name) {
